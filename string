@@ -1,0 +1,12 @@
+function sliceCityFromAddress(address) {
+  let findSi = address.indexOf('시');
+  let findDo = address.indexOf('도');
+
+  if ((findSi !== -1) && (findDo !== -1)) {
+    address = address.slice(0, findDo+2) + address.slice(findSi+2, address.length);
+  } else if (findSi !== -1) {
+    address = address.slice(findSi+2, address.length);
+  }
+
+  return address;
+}
